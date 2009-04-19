@@ -1,10 +1,11 @@
 Unscramble
 ==========
 
-This is a Ruby script which prints solutions to the Word Scramble iPhone app by Zynga. When you run the script, you will be
-prompted to input the board, left-to-right, top-to-bottom; the script will then recursively work through the network of possible
-moves on the board, matching each word against an indexed dictionary array, abandoning branches as soon as they become unmatchable
-by having no substring matches in the dictionary. Optimized to run in less than a second on most systems.
+This is a Ruby script which prints solutions to the Word Scramble iPhone app by Zynga. When you run the script,
+you will be prompted to input the board, left-to-right, top-to-bottom; the script will then recursively work
+through the network of possible moves on the board, matching each word against an indexed dictionary array,
+abandoning branches as soon as they become unmatchable by having no substring matches in the dictionary.
+Optimized to run in less than a second on most systems.
 
 
 
