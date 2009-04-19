@@ -1,0 +1,43 @@
+Unscramble
+==========
+
+This is a Ruby script which prints solutions to the Word Scramble iPhone app by Zynga. When you run the script, you will be
+prompted to input the board, left-to-right, top-to-bottom; the script will then recursively work through the network of possible
+moves on the board, matching each word against an indexed dictionary array, abandoning branches as soon as they become unmatchable
+by having no substring matches in the dictionary. Optimized to run in less than a second on most systems.
+
+
+
+Example
+=======
+
+1. Run the script. You will receive a prompt.
+
+2. Start Scramble.
+
+3. Given the board: a s d f
+                    z x c v
+                    w e r t
+                    y u i o
+
+   input: asdfzxcvwertyuio
+
+4. Get a ridiculous high score.
+
+
+
+Caveats
+=======
+
+No support for 'Qu' yet. This was a quick project to help me destroy my friend's Scramble score and I didn't feel like
+getting into it...
+
+Also, cheating is bad.
+
+
+
+Author
+======
+
+Joey Schoblaska
+joeyschoblaska.com
