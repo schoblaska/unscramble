@@ -20,7 +20,7 @@ File.open('dictionary.txt').each_line { |line|
 class Array
   
   def to_word
-    map{ |a| $board[a - 1, 1] }.join
+    map{ |a| $board[a - 1] }.join
   end
 
   def possible_moves
@@ -50,8 +50,8 @@ def recurse(path)
 end
 
 puts 'Input the board (left-to-right, top-to-bottom): '
-$board = gets
+$board = gets.scan(/qu|[a-z]/)
 
 (1..16).each{ |start| recurse([start]) }
 
-@solutions.sort_by{ |a| a.size * -1 }.each{ |solution| solution.print }
+@solutions.sort_by{ |a| a.to_word.size * -1 }.each{ |solution| solution.print }
