@@ -29,10 +29,7 @@ class Array
   
   def substring_dictionary_match?
     ($dictionary[to_word[0,3].to_sym] || []).each do |word|
-      if (word.index to_word) == 0
-        return true
-        break
-      end
+      return true if (word.index to_word) == 0
     end
     return false
   end
