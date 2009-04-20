@@ -46,7 +46,7 @@ end
 
 def recurse(path)
   @solutions << path if path.size > 2 and ($dictionary[path.to_word[0,3].to_sym] || []).include?(path.to_word) and !@solutions.map{ |a| a.to_word }.include?(path.to_word)
-  path.possible_moves.each{ |move| recurse(path + [move]) } unless path.possible_moves.empty? or !path.substring_dictionary_match?
+  path.possible_moves.each{ |move| recurse(path + [move]) } if path.substring_dictionary_match?
 end
 
 puts 'Input the board (left-to-right, top-to-bottom): '
