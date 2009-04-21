@@ -7,12 +7,6 @@ NETWORK = { 1  => [2,5,6],        2  => [1,3,5,6,7],           3  => [2,4,6,7,8]
 $dictionary = {}
 
 File.open('dictionary.txt').each_line { |line| 
-  $dictionary[line[0,1].to_sym] ||= []
-  $dictionary[line[0,1].to_sym] << line.chop
-  
-  $dictionary[line[0,2].to_sym] ||= []
-  $dictionary[line[0,2].to_sym] << line.chop
-  
   $dictionary[line[0,3].to_sym] ||= []
   $dictionary[line[0,3].to_sym] << line.chop
 }
@@ -43,7 +37,7 @@ end
 
 def recurse(path)
   @solutions << path if path.size > 2 and ($dictionary[path.to_word[0,3].to_sym] || []).include?(path.to_word) and !@solutions.map{ |a| a.to_word }.include?(path.to_word)
-  path.possible_moves.each{ |move| recurse(path + [move]) } if path.substring_dictionary_match?
+  path.possible_moves.each{ |move| recurse(path + [move]) } if path.size < 3 or path.substring_dictionary_match?
 end
 
 puts 'Input the board (left-to-right, top-to-bottom): '
